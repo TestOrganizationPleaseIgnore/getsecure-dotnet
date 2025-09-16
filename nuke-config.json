@@ -1,0 +1,12 @@
+{
+  "Solution": "GetSecure.sln",
+  "Configuration": "Release",
+  "Target": "Compile",
+  "Host": "Default",
+  "NoLogo": false,
+  "Help": false,
+  "Verbosity": "Normal",
+  "Skip": [],
+  "Profile": [],
+  "Parameters": {}
+}

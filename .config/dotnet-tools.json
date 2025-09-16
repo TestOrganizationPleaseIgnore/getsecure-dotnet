@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "nuke.globaltool": {
+      "version": "7.0.0",
+      "commands": [
+        "nuke"
+      ],
+      "rollForward": false
+    }
+  }
+}

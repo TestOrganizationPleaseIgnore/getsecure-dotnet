@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyTitle>GetSecure.Core</AssemblyTitle>
+    <AssemblyDescription>Core library for creating secure, time-limited links</AssemblyDescription>
+    <AssemblyCompany>Maratsh</AssemblyCompany>
+    <AssemblyProduct>GetSecure.Core</AssemblyProduct>
+    <AssemblyCopyright>Copyright © Maratsh 2024</AssemblyCopyright>
+    <PackageId>GetSecure.Core</PackageId>
+    <PackageDescription>Core library for creating secure, time-limited links compatible with nginx secure_link module</PackageDescription>
+    <PackageTags>nginx;secure_link;security;links</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/maratsh/getsecure-net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/maratsh/getsecure-net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Authors>Maratsh</Authors>
+    <Copyright>Copyright © Maratsh 2024</Copyright>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>

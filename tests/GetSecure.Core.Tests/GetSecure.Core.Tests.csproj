@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <AssemblyTitle>GetSecure.Core.Tests</AssemblyTitle>
+    <AssemblyDescription>Unit tests for GetSecure.Core library</AssemblyDescription>
+    <AssemblyCompany>Maratsh</AssemblyCompany>
+    <AssemblyProduct>GetSecure.Core.Tests</AssemblyProduct>
+    <AssemblyCopyright>Copyright © Maratsh 2024</AssemblyCopyright>
+    <AssemblyVersion>0.0.8.0</AssemblyVersion>
+    <FileVersion>0.0.8.0</FileVersion>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.6.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\sdk\GetSecure.Core\GetSecure.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/bin/Debug/net9.0/GetSecure.Core.deps.json
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/bin/Debug/net9.0/GetSecure.Core.dll
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/bin/Debug/net9.0/GetSecure.Core.pdb
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/GetSecure.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/GetSecure.Core.AssemblyInfoInputs.cache
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/GetSecure.Core.AssemblyInfo.cs
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/GetSecure.Core.csproj.CoreCompileInputs.cache
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/GetSecure.Core.dll
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/refint/GetSecure.Core.dll
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/GetSecure.Core.pdb
+/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/obj/Debug/net9.0/ref/GetSecure.Core.dll

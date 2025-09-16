@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>GetSecure.CLI</id>
+    <version>1.0.0</version>
+    <authors>Maratsh</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/maratsh/getsecure-net</projectUrl>
+    <description>Command-line interface for creating and validating secure, time-limited links</description>
+    <copyright>Copyright © Maratsh 2024</copyright>
+    <tags>nginx secure_link cli command-line</tags>
+    <repository type="git" url="https://github.com/maratsh/getsecure-net" commit="d3a4d0c7c423940292916ca7326d4b4e72c19a0f" />
+    <dependencies>
+      <group targetFramework="net9.0">
+        <dependency id="GetSecure.Core" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.CommandLine" version="2.0.0-beta4.22272.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.CLI/bin/Debug/net9.0/GetSecure.CLI.runtimeconfig.json" target="lib/net9.0/GetSecure.CLI.runtimeconfig.json" />
+    <file src="/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.CLI/bin/Debug/net9.0/GetSecure.CLI.dll" target="lib/net9.0/GetSecure.CLI.dll" />
+  </files>
+</package>

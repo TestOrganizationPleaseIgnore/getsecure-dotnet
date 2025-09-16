@@ -1,8 +1,16 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSecure", "sdk\GetSecure\GetSecure.csproj", "{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSecure.Core", "sdk\GetSecure.Core\GetSecure.Core.csproj", "{922EC616-89F9-4CC5-AD80-718F16E54FF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSecure.CLI", "sdk\GetSecure.CLI\GetSecure.CLI.csproj", "{F61F5876-2AE4-4020-A4D1-A2161349E329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSecure.Core.Tests", "tests\GetSecure.Core.Tests\GetSecure.Core.Tests.csproj", "{7ABFC784-AD6A-4B59-913A-03EE4A5966E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetSecure.CLI.Tests", "tests\GetSecure.CLI.Tests\GetSecure.CLI.Tests.csproj", "{868CFE85-0091-4D0B-A4A8-368710381C48}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{EB8BF3AD-06FC-430D-AD04-4C17EBBCC4A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +18,24 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8BF3AD-06FC-430D-AD04-4C17EBBCC4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8BF3AD-06FC-430D-AD04-4C17EBBCC4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922EC616-89F9-4CC5-AD80-718F16E54FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922EC616-89F9-4CC5-AD80-718F16E54FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922EC616-89F9-4CC5-AD80-718F16E54FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922EC616-89F9-4CC5-AD80-718F16E54FF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F61F5876-2AE4-4020-A4D1-A2161349E329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F61F5876-2AE4-4020-A4D1-A2161349E329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F61F5876-2AE4-4020-A4D1-A2161349E329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F61F5876-2AE4-4020-A4D1-A2161349E329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ABFC784-AD6A-4B59-913A-03EE4A5966E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABFC784-AD6A-4B59-913A-03EE4A5966E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABFC784-AD6A-4B59-913A-03EE4A5966E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABFC784-AD6A-4B59-913A-03EE4A5966E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{868CFE85-0091-4D0B-A4A8-368710381C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{868CFE85-0091-4D0B-A4A8-368710381C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{868CFE85-0091-4D0B-A4A8-368710381C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{868CFE85-0091-4D0B-A4A8-368710381C48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

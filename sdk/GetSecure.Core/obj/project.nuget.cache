@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wUY8UiipBwQ=",
+  "success": true,
+  "projectFilePath": "/home/maratsh/workspaces/getsecure-net/sdk/GetSecure.Core/GetSecure.Core.csproj",
+  "expectedPackageFiles": [
+    "/home/maratsh/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.8/microsoft.aspnetcore.app.ref.9.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
