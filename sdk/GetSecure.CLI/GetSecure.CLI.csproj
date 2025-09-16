@@ -32,4 +32,8 @@
     <ProjectReference Include="..\GetSecure.Core\GetSecure.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
 </Project>
