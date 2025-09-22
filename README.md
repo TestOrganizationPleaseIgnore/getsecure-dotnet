@@ -19,9 +19,6 @@ The **GetSecure .NET** enables .NET developers to easily create secure, time-lim
 
 ### Installation
 
-#### Build from Source
-
-This project uses [NUKE](https://nuke.build/) as the build automation system. See [BUILD.md](BUILD.md) for detailed build instructions.
 
 ```bash
 git clone https://github.com/maratsh/getsecure-net.git
