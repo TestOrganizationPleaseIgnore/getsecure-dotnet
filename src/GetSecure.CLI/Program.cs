@@ -15,7 +15,7 @@ public class Program
 
         // Create the secure command
         var secureCommand = new Command("secure", "Create a secure link");
-        
+
         // Add arguments
         var baseLinkArgument = new Argument<string>("baseLink", "Base URL to secure");
         var secretArgument = new Argument<string>("secret", "Secret string shared with web server");
@@ -45,10 +45,10 @@ public class Program
 
         // Create the validate command
         var validateCommand = new Command("validate", "Validate a secure link");
-        
+
         var linkArgument = new Argument<string>("link", "Secure link to validate");
         var validateSecretArgument = new Argument<string>("secret", "Secret string shared with web server");
-        
+
         validateCommand.AddArgument(linkArgument);
         validateCommand.AddArgument(validateSecretArgument);
 

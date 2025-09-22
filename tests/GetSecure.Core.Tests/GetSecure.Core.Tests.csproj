@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\sdk\GetSecure.Core\GetSecure.Core.csproj" />
+    <ProjectReference Include="..\..\src\GetSecure.Core\GetSecure.Core.csproj" />
   </ItemGroup>
 
 </Project>

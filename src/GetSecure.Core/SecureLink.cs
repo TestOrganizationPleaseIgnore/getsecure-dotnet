@@ -22,7 +22,7 @@ public static class SecureLink
     {
         if (string.IsNullOrWhiteSpace(baseLink))
             throw new ArgumentException("Base link cannot be null or empty", nameof(baseLink));
-        
+
         if (string.IsNullOrWhiteSpace(secret))
             throw new ArgumentException("Secret cannot be null or empty", nameof(secret));
 
@@ -42,7 +42,7 @@ public static class SecureLink
         // Generate SHA256 hash
         using var sha256 = SHA256.Create();
         var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(hashString));
-        
+
         // Convert to base64url encoding (compatible with nginx)
         var protectionString = Convert.ToBase64String(hashBytes)
             .Replace('+', '-')
@@ -69,7 +69,7 @@ public static class SecureLink
         {
             var uri = new Uri(secureLink);
             var query = ParseQueryString(uri.Query);
-            
+
             var expiresStr = query.GetValueOrDefault("expires");
             var hash = query.GetValueOrDefault("sha256");
 
@@ -77,7 +77,7 @@ public static class SecureLink
                 return false;
 
             // Check if expired
-            if (!long.TryParse(expiresStr, out var expires) || 
+            if (!long.TryParse(expiresStr, out var expires) ||
                 DateTimeOffset.UtcNow.ToUnixTimeSeconds() > expires)
                 return false;
 
@@ -108,7 +108,7 @@ public static class SecureLink
     private static Dictionary<string, string> ParseQueryString(string queryString)
     {
         var result = new Dictionary<string, string>();
-        
+
         if (string.IsNullOrEmpty(queryString))
             return result;
 
@@ -117,7 +117,7 @@ public static class SecureLink
             queryString = queryString.Substring(1);
 
         var pairs = queryString.Split('&', StringSplitOptions.RemoveEmptyEntries);
-        
+
         foreach (var pair in pairs)
         {
             var keyValue = pair.Split('=', 2);
