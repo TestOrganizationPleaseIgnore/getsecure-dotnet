@@ -397,3 +397,5 @@ Thumbs.db
 
 # Project specific
 *.DotSettings
+.GetSecure.sln
+tools/

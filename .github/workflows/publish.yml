@@ -1,0 +1,116 @@
+name: Publish Packages
+
+on:
+  push:
+    tags:
+      - '*-v*'
+
+env:
+  DOTNET_VERSION: '9.0.x'
+  NUGET_SOURCE: 'https://api.nuget.org/v3/index.json'
+
+jobs:
+  detect-project:
+    runs-on: ubuntu-latest
+    outputs:
+      project: ${{ steps.detect.outputs.project }}
+      version: ${{ steps.detect.outputs.version }}
+      tag: ${{ steps.detect.outputs.tag }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect project and version from tag
+        id: detect
+        run: |
+          TAG_NAME="${{ github.ref_name }}"
+          echo "Processing tag: $TAG_NAME"
+          
+          # Extract project name and version from tag (any project name)
+          if [[ $TAG_NAME =~ ^(.+)-v(.+)$ ]]; then
+            PROJECT_NAME="${BASH_REMATCH[1]}"
+            VERSION="${BASH_REMATCH[2]}"
+            echo "Detected project: $PROJECT_NAME"
+            echo "Detected version: $VERSION"
+            echo "project=$PROJECT_NAME" >> $GITHUB_OUTPUT
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
+          else
+            echo "Invalid tag format: $TAG_NAME"
+            echo "Expected format: <projectname>-v<version>"
+            exit 1
+          fi
+
+  publish:
+    needs: detect-project
+    runs-on: ubuntu-latest
+    if: needs.detect-project.outputs.project != ''
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Build and publish project
+        uses: cake-build/cake-action@v3
+        with:
+          target: Publish
+          script-path: build.cake
+          arguments: --project="${{ needs.detect-project.outputs.project }}" --configuration=Release
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: Upload packages as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages-${{ needs.detect-project.outputs.project }}-${{ needs.detect-project.outputs.version }}
+          path: ./output/packages/*.nupkg
+          retention-days: 30
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.detect-project.outputs.tag }}
+          name: ${{ needs.detect-project.outputs.project }} ${{ needs.detect-project.outputs.version }}
+          body: |
+            ## ${{ needs.detect-project.outputs.project }} ${{ needs.detect-project.outputs.version }}
+            
+            ### Changes
+            - Automated release from tag ${{ needs.detect-project.outputs.tag }}
+            
+            ### Installation
+            
+            **NuGet Package Manager:**
+            ```
+            Install-Package ${{ needs.detect-project.outputs.project }} -Version ${{ needs.detect-project.outputs.version }}
+            ```
+            
+            **PackageReference:**
+            ```xml
+            <PackageReference Include="${{ needs.detect-project.outputs.project }}" Version="${{ needs.detect-project.outputs.version }}" />
+            ```
+            
+            **dotnet CLI:**
+            ```
+            dotnet add package ${{ needs.detect-project.outputs.project }} --version ${{ needs.detect-project.outputs.version }}
+            ```
+          draft: false
+          prerelease: false
+          files: ./output/packages/${{ needs.detect-project.outputs.project }}.${{ needs.detect-project.outputs.version }}.nupkg
