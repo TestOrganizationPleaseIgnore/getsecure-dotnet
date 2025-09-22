@@ -46,6 +46,7 @@ jobs:
   publish:
     needs: detect-project
     runs-on: ubuntu-latest
+    environment: publish
     if: needs.detect-project.outputs.project != ''
     
     steps:
