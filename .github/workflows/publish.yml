@@ -49,7 +49,8 @@ jobs:
     environment: publish
     if: needs.detect-project.outputs.project != ''
     permissions:
-      id-token: write  # enable GitHub OIDC token issuance for this job    
+      id-token: write  # enable GitHub OIDC token issuance for this job
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
